@@ -23,6 +23,7 @@
         <versionRange>[1.0,)</versionRange>
         <goals>
           <goal>validate</goal>
+          <goal>format</goal>
         </goals>
       </pluginExecutionFilter>
       <action>
