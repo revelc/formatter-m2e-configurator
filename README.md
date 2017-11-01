@@ -2,7 +2,7 @@
 
 [![Linux Build Status](https://travis-ci.org/revelc/formatter-m2e-configurator.svg)](https://travis-ci.org/revelc/formatter-m2e-configurator)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/j3cd0dwqlyu0iv2y?svg=true)](https://ci.appveyor.com/project/velo/formatter-m2e-configurator)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/formatter-m2e-configurator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/formatter-m2e-configurator/)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/net.revelc.code.formatter.site/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/net.revelc.code.formatter.site/)
 [![Issues](https://img.shields.io/github/issues/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/issues)
 [![Forks](https://img.shields.io/github/forks/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/network)
 [![Stars](https://img.shields.io/github/stars/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/stargazers)
