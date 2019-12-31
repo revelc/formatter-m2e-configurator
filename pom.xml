@@ -21,6 +21,7 @@
     <groupId>io.takari.tycho</groupId>
     <artifactId>tycho-support</artifactId>
     <version>0.17.0</version>
+    <relativePath />
   </parent>
 
   <groupId>net.revelc.code.formatter</groupId>
