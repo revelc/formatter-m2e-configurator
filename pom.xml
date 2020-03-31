@@ -138,7 +138,7 @@
 
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
-    <tychoVersion>1.0.0</tychoVersion>
+    <tychoVersion>1.6.0</tychoVersion>
   </properties>
 
   <build>
