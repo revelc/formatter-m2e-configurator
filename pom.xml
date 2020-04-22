@@ -126,8 +126,8 @@
   <properties>
     <autoVersionSubmodules>true</autoVersionSubmodules>
 
-    <eclipse-repo.url>http://download.eclipse.org/releases/oxygen</eclipse-repo.url>
     <m2e-core.url>${repoHost}/content/sites/m2e.extras/m2e/1.9.0/N/LATEST</m2e-core.url>
+    <eclipse-repo.url>http://download.eclipse.org/releases/2020-03</eclipse-repo.url>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
