@@ -14,13 +14,15 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
+    <!-- TODO: This is obsolete, we should it's the takari parent 28 directly but need more work -->
     <groupId>io.takari.tycho</groupId>
     <artifactId>tycho-support</artifactId>
     <version>0.17.0</version>
+    <relativePath />
   </parent>
 
   <groupId>net.revelc.code.formatter</groupId>
@@ -124,8 +126,8 @@
   <properties>
     <autoVersionSubmodules>true</autoVersionSubmodules>
 
-    <eclipse-repo.url>http://download.eclipse.org/releases/oxygen</eclipse-repo.url>
-    <m2e-core.url>${repoHost}/content/sites/m2e.extras/m2e/1.9.0/N/LATEST</m2e-core.url>
+    <eclipse-repo.url>http://download.eclipse.org/releases/2020-03</eclipse-repo.url>
+    <m2e-core.url>https://download.eclipse.org/technology/m2e/releases/1.15/1.15.0.20200310-1746/</m2e-core.url>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
