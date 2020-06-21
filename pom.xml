@@ -18,7 +18,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <!-- TODO: This is obsolete, we should it's the takari parent 28 directly but need more work -->
+    <!-- TODO: This is obsolete, we should use it's the takari parent 28 directly but need more work -->
     <groupId>io.takari.tycho</groupId>
     <artifactId>tycho-support</artifactId>
     <version>0.17.0</version>
