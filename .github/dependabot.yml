@@ -1,0 +1,11 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: io.takari.tycho:tycho-support
+    versions:
+    - "> 0.17.0"
