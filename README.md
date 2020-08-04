@@ -6,7 +6,7 @@
 [![Issues](https://img.shields.io/github/issues/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/issues)
 [![Forks](https://img.shields.io/github/forks/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/network)
 [![Stars](https://img.shields.io/github/stars/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/stargazers)
-[![Apache License](http://img.shields.io/badge/license-ASL-blue.svg)](https://github.com/revelc/formatter-m2e-configurator/blob/master/LICENSE)
+[![Apache License](http://img.shields.io/badge/license-ASL-blue.svg)](https://github.com/revelc/formatter-m2e-configurator/blob/main/LICENSE)
 
 This project provides an [m2e] project configurator for the
 [formatter-maven-plugin], so that if you import your project into [Eclipse] as
