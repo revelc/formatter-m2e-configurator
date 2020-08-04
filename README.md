@@ -1,12 +1,8 @@
 # formatter-m2e-configurator
 
-[![Linux Build Status](https://travis-ci.org/revelc/formatter-m2e-configurator.svg)](https://travis-ci.org/revelc/formatter-m2e-configurator)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/j3cd0dwqlyu0iv2y?svg=true)](https://ci.appveyor.com/project/velo/formatter-m2e-configurator)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/net.revelc.code.formatter.site/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/net.revelc.code.formatter.site/)
-[![Issues](https://img.shields.io/github/issues/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/issues)
-[![Forks](https://img.shields.io/github/forks/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/network)
-[![Stars](https://img.shields.io/github/stars/revelc/formatter-m2e-configurator.svg)](https://github.com/revelc/formatter-m2e-configurator/stargazers)
-[![Apache License](http://img.shields.io/badge/license-ASL-blue.svg)](https://github.com/revelc/formatter-m2e-configurator/blob/main/LICENSE)
+[![mvn verify][ci_img]][ci_link]
+[![Maven Central][maven_img]][maven_link]
+[![Apache License][license_img]][license_link]
 
 This project provides an [m2e] project configurator for the
 [formatter-maven-plugin], so that if you import your project into [Eclipse] as
@@ -22,9 +18,15 @@ Contributions are welcome.
 
 [Eclipse]: https://eclipse.org
 [Maven]: https://maven.apache.org
-[m2e]: https://eclipse.org/m2e
+[ci_img]: https://github.com/revelc/formatter-m2e-configurator/workflows/mvn%20verify/badge.svg
+[ci_link]: https://github.com/revelc/formatter-m2e-configurator/actions
 [formatter-maven-plugin]: https://github.com/revelc/formatter-maven-plugin
-[related1]: http://wiki.eclipse.org/M2E_extension_development_environment
-[related2]: http://wiki.eclipse.org/Submitting_M2E_marketplace_entries
-[related3]: http://www.eclipse.org/forums/index.php/t/478639/0/unread/
-[related4]: http://www.vogella.com/articles/EclipsePreferences/article.html
+[license_img]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
+[license_link]: https://github.com/revelc/formatter-m2e-configurator/blob/main/LICENSE
+[m2e]: https://eclipse.org/m2e
+[maven_img]: https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/formatter-m2e-configurator/badge.svg
+[maven_link]: https://maven-badges.herokuapp.com/maven-central/net.revelc.code.formatter/formatter-m2e-configurator
+[related1]: https://wiki.eclipse.org/M2E_extension_development_environment
+[related2]: https://wiki.eclipse.org/Submitting_M2E_marketplace_entries
+[related3]: https://www.eclipse.org/forums/index.php/t/478639/0/unread/
+[related4]: https://www.vogella.com/articles/EclipsePreferences/article.html
