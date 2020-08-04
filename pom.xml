@@ -390,7 +390,7 @@
             </goals>
             <phase>compile</phase>
             <configuration>
-              <header>${main.basedir}/copyright.txt</header>
+              <header>${main.basedir}/src/config/license-header.txt</header>
               <excludes>
                 <exclude>**/target/**</exclude>
                 <exclude>**/build.properties</exclude>
