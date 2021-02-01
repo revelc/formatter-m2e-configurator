@@ -140,7 +140,7 @@
 
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
-    <tychoVersion>2.1.0</tychoVersion>
+    <tychoVersion>2.2.0</tychoVersion>
   </properties>
 
   <build>
