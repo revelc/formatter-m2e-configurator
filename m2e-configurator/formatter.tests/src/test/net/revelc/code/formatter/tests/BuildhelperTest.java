@@ -13,6 +13,8 @@
  */
 package net.revelc.code.formatter.tests;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.File;
 
 import org.eclipse.core.resources.IProject;
@@ -56,12 +58,11 @@ public class BuildhelperTest extends AbstractMavenProjectTestCase {
         }, classpath);
 
         File target = project.findMember("target").getRawLocation().toFile();
-        assertTrue(target + " does not exist", target.exists());
-        assertTrue("Class", new File(target, "classes/buildhelper002/custom/CustomTreeClass.class").exists());
-        assertTrue("Resource", new File(target, "classes/buildhelper002/custom/customTree.txt").exists());
-        assertTrue("Test Class",
-                new File(target, "test-classes/buildhelper002/custom/CustomTreeClassTest.class").exists());
-        assertTrue("Test Resource", new File(target, "test-classes/buildhelper002/custom/customTreeTest.txt").exists());
+        assertTrue(target.exists(), target + " does not exist");
+        assertTrue(new File(target, "classes/buildhelper002/custom/CustomTreeClass.class").exists(), "Class");
+        assertTrue(new File(target, "classes/buildhelper002/custom/customTree.txt").exists(), "Resource");
+        assertTrue(new File(target, "test-classes/buildhelper002/custom/CustomTreeClassTest.class").exists(), "Test Class");
+        assertTrue(new File(target, "test-classes/buildhelper002/custom/customTreeTest.txt").exists(), "Test Resource");
     }
 
     private IProject importBuildHelperProject(String name) throws Exception {
