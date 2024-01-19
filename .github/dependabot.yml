@@ -12,6 +12,8 @@ updates:
   - dependency-name: io.takari.tycho:tycho-support
     versions:
     - "> 0.17.0"
+  - dependency-name: org.eclipse.tycho:target-platform-configuration
+    update-types: ["version-update:semver-major"]
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
