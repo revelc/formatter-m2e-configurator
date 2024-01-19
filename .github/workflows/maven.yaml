@@ -36,7 +36,7 @@ jobs:
         java-version: 11
         distribution: zulu
     - name: Cache local maven repository
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.m2
         key: ${{ matrix.os }}-m2-${{ hashFiles('**/pom.xml') }}
