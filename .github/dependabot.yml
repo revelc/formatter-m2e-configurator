@@ -1,15 +1,22 @@
 version: 2
 updates:
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: monthly
 - package-ecosystem: maven
   directory: "/"
   schedule:
-    interval: monthly
-  open-pull-requests-limit: 10
+    interval: weekly
+  groups:
+    maven:
+      patterns:
+        - "*"
   ignore:
   - dependency-name: io.takari.tycho:tycho-support
     versions:
     - "> 0.17.0"
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+  groups:
+    github-actions:
+      patterns:
+        - "*"
