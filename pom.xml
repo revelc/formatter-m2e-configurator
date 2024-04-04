@@ -18,6 +18,13 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>io.takari</groupId>
+    <artifactId>takari</artifactId>
+    <version>53</version>
+    <relativePath />
+  </parent>
+
   <groupId>net.revelc.code.formatter</groupId>
   <artifactId>formatter-m2e-configurator-parent</artifactId>
   <version>2.6.0-SNAPSHOT</version>
@@ -402,6 +409,7 @@
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
+          <useDefaultExcludes>true</useDefaultExcludes>
           <licenseSets>
             <licenseSet>
               <header>${main.basedir}/src/config/LICENSE_HEADER</header>
