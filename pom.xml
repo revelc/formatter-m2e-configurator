@@ -408,6 +408,7 @@
               <excludes>
                 <exclude>NOTICE</exclude>
                 <exclude>**/*license.html</exclude>
+                <exclude>**/*plugin_customization.ini</exclude>
               </excludes>
             </licenseSet>
           </licenseSets>
