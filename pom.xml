@@ -133,6 +133,19 @@
     <tychoVersion>2.7.5</tychoVersion>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>m2e-core</id>
+      <url>${m2e-core.url}</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>eclipse</id>
+      <url>${eclipse-repo.url}</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+
   <build>
     <pluginManagement>
       <plugins>
