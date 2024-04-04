@@ -129,8 +129,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
-
-    <tychoVersion>2.7.5</tychoVersion>
+    <tychoVersion>4.0.7</tychoVersion>
   </properties>
 
   <repositories>
