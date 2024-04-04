@@ -9,6 +9,12 @@ This project provides an [m2e] project configurator for the
 a [Maven] project using m2e, you can have your project settings match the Maven
 plugin settings.
 
+M2e related items
+- [related1]
+- [related2]
+- [related3]
+- [related4]
+
 This software is provided WITHOUT ANY WARRANTY, and is available under the
 Apache License, Version 2. Any code loss caused by using this plugin is not the
 responsibility of the author(s). Be sure to use some source repository
