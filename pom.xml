@@ -409,15 +409,15 @@
             </goals>
             <phase>compile</phase>
             <configuration>
-              <header>${main.basedir}/src/config/license-header.txt</header>
-              <excludes>
-                <exclude>**/target/**</exclude>
-                <exclude>**/build.properties</exclude>
-                <exclude>NOTICE</exclude>
-              </excludes>
-              <mapping>
-                <java>SLASHSTAR_STYLE</java>
-              </mapping>
+              <licenseSets>
+                <licenseSet>
+                  <header>${main.basedir}/src/config/LICENSE_HEADER</header>
+                  <excludes>
+                    <exclude>NOTICE</exclude>
+                  </excludes>
+                </licenseSet>
+              </licenseSets>
+              <prohibitLegacyUse>true</prohibitLegacyUse>
             </configuration>
           </execution>
         </executions>
