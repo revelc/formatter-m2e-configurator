@@ -407,6 +407,7 @@
               <header>${main.basedir}/src/config/LICENSE_HEADER</header>
               <excludes>
                 <exclude>NOTICE</exclude>
+                <exclude>**/*license.html</exclude>
               </excludes>
             </licenseSet>
           </licenseSets>
