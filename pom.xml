@@ -15,15 +15,8 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <!-- TODO: This is obsolete, we should use it's the takari parent 28 directly but need more work -->
-    <groupId>io.takari.tycho</groupId>
-    <artifactId>tycho-support</artifactId>
-    <version>0.17.0</version>
-    <relativePath/>
-  </parent>
+  <modelVersion>4.0.0</modelVersion>
 
   <groupId>net.revelc.code.formatter</groupId>
   <artifactId>formatter-m2e-configurator-parent</artifactId>
@@ -320,6 +313,7 @@
           <artifactId>target-platform-configuration</artifactId>
           <version>${tychoVersion}</version>
           <configuration>
+            <pomDependencies>consider</pomDependencies>
             <environments>
               <environment>
                 <os>win32</os>
@@ -359,6 +353,34 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tychoVersion}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-plugin</artifactId>
+        <version>${tychoVersion}</version>
+        <executions>
+          <execution>
+            <id>attach-p2-metadata</id>
+            <goals>
+              <goal>p2-metadata</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tychoVersion}</version>
+        <configuration>
+          <compress>false</compress>
+        </configuration>
+      </plugin>
       <!-- Find maven root -->
       <plugin>
         <groupId>org.commonjava.maven.plugins</groupId>
