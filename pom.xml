@@ -321,6 +321,7 @@
           <version>${tychoVersion}</version>
           <configuration>
             <pomDependencies>consider</pomDependencies>
+            <executionEnvironment>JavaSE-17</executionEnvironment>
             <environments>
               <environment>
                 <os>win32</os>
