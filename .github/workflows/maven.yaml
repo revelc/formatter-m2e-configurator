@@ -36,7 +36,7 @@ jobs:
     - name: Download Maven Wrapper
       run: mvn wrapper:wrapper "-Dmaven=3.9.6"
     - name: Build with Maven
-      run: mvn -B -V -e "-Dstyle.color=always" verify
+      run: ./mvnw -B -V -e "-Dstyle.color=always" verify
       env:
         MAVEN_OPTS: -Djansi.force=true
 
