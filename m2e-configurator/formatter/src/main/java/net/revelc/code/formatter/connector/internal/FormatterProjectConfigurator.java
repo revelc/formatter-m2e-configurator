@@ -98,9 +98,6 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
                     .node("org.eclipse.jdt.ui")
                     .put("cleanup.format_source_code", "true");
         }
-
-        // jsdtConfigFile = cfg.getChild("configJsFile").getValue();
-        // src/config/eclipse/formatter/javascript.xml
     }
 
     private Xpp3Dom[] parseConfigurationFile(ProjectConfigurationRequest request, IProgressMonitor monitor)
