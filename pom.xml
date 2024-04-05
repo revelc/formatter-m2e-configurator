@@ -30,7 +30,7 @@
   <version>2.6.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
-  <name>formatter-m2e-configurator-parent</name>
+  <name>formatter-m2e-configurator</name>
 
   <description>M2E configurator for the formatter-maven-plugin</description>
   <url>https://github.com/revelc/formatter-m2e-configurator/</url>
