@@ -20,12 +20,11 @@
 
   <parent>
     <groupId>net.revelc.code.formatter</groupId>
-    <artifactId>formatter-m2e-configurator-parent</artifactId>
+    <artifactId>formatter-m2e-configurator</artifactId>
     <version>2.6.0-SNAPSHOT</version>
-    <relativePath>../../</relativePath>
   </parent>
 
-  <artifactId>net.revelc.code.formatter.tests</artifactId>
+  <artifactId>net.revelc.code.formatter.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
 
 </project>
