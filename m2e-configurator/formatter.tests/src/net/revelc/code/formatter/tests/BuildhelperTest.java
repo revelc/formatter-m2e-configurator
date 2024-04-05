@@ -25,9 +25,12 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.m2e.core.project.ResolverConfiguration;
 import org.eclipse.m2e.tests.common.AbstractMavenProjectTestCase;
 import org.eclipse.m2e.tests.common.ClasspathHelpers;
+import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("restriction")
 public class BuildhelperTest extends AbstractMavenProjectTestCase {
+
+    @Test
     public void test_p001_simple() throws Exception {
         IProject project = importBuildHelperProject("buildhelper-001");
         IJavaProject javaProject = JavaCore.create(project);
@@ -41,6 +44,7 @@ public class BuildhelperTest extends AbstractMavenProjectTestCase {
         }, classpath);
     }
 
+    @Test
     public void test_p002_resources() throws Exception {
         IProject project = importBuildHelperProject("buildhelper-002");
         IJavaProject javaProject = JavaCore.create(project);
