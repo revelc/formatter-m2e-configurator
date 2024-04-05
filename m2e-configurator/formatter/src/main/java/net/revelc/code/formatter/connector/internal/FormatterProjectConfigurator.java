@@ -23,6 +23,7 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.logging.Logger;
+import net.revelc.code.formatter.connector.FormatterCore;
 import org.apache.maven.plugin.MojoExecution;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.codehaus.plexus.util.xml.Xpp3DomBuilder;
@@ -41,8 +42,6 @@ import org.eclipse.m2e.core.project.configurator.AbstractBuildParticipant;
 import org.eclipse.m2e.core.project.configurator.AbstractProjectConfigurator;
 import org.eclipse.m2e.core.project.configurator.ProjectConfigurationRequest;
 import org.osgi.service.prefs.Preferences;
-
-import net.revelc.code.formatter.connector.FormatterCore;
 
 public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
@@ -69,8 +68,8 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
     }
 
     @Override
-    public AbstractBuildParticipant getBuildParticipant(IMavenProjectFacade projectFacade, MojoExecution execution,
-            IPluginExecutionMetadata executionMetadata) {
+    public AbstractBuildParticipant getBuildParticipant(
+            IMavenProjectFacade projectFacade, MojoExecution execution, IPluginExecutionMetadata executionMetadata) {
         // nothing to do
         return null;
     }
@@ -84,12 +83,20 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
             Xpp3Dom[] settings = parseConfigurationFile(request, monitor);
 
             for (Xpp3Dom setting : settings) {
-                Platform.getPreferencesService().getRootNode().node("project").node(eclipseProject.getName())
-                        .node(JavaCore.PLUGIN_ID).put(setting.getAttribute("id"), setting.getAttribute("value"));
+                Platform.getPreferencesService()
+                        .getRootNode()
+                        .node("project")
+                        .node(eclipseProject.getName())
+                        .node(JavaCore.PLUGIN_ID)
+                        .put(setting.getAttribute("id"), setting.getAttribute("value"));
             }
 
-            Platform.getPreferencesService().getRootNode().node("project").node(eclipseProject.getName())
-                    .node("org.eclipse.jdt.ui").put("cleanup.format_source_code", "true");
+            Platform.getPreferencesService()
+                    .getRootNode()
+                    .node("project")
+                    .node(eclipseProject.getName())
+                    .node("org.eclipse.jdt.ui")
+                    .put("cleanup.format_source_code", "true");
         }
 
         // jsdtConfigFile = cfg.getChild("configJsFile").getValue();
@@ -110,11 +117,11 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         return dom.getChild("profile").getChildren("setting");
     }
 
-    private InputStream readConfigFile(Formatter formatter, ProjectConfigurationRequest request,
-            IProgressMonitor monitor) throws CoreException {
+    private InputStream readConfigFile(
+            Formatter formatter, ProjectConfigurationRequest request, IProgressMonitor monitor) throws CoreException {
         IMavenProjectFacade mavenProject = request.mavenProjectFacade();
-        List<MojoExecution> executions = mavenProject.getMojoExecutions("net.revelc.code.formatter",
-                "formatter-maven-plugin", monitor, "validate");
+        List<MojoExecution> executions = mavenProject.getMojoExecutions(
+                "net.revelc.code.formatter", "formatter-maven-plugin", monitor, "validate");
 
         MojoExecution execution = executions.get(0);
         Xpp3Dom cfg = execution.getConfiguration();
@@ -125,12 +132,16 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
         File cfgFile = new File(javaConfigFile);
         if (!cfgFile.isAbsolute()) {
-            cfgFile = request.mavenProjectFacade().getProject().getLocation().append(javaConfigFile).toFile();
+            cfgFile = request.mavenProjectFacade()
+                    .getProject()
+                    .getLocation()
+                    .append(javaConfigFile)
+                    .toFile();
         }
 
         if (!cfgFile.exists())
-            throw new CoreException(new Status(IStatus.CANCEL, FormatterCore.PLUGIN_ID,
-                    "Configuration file '" + javaConfigFile + "' not found!"));
+            throw new CoreException(new Status(
+                    IStatus.CANCEL, FormatterCore.PLUGIN_ID, "Configuration file '" + javaConfigFile + "' not found!"));
 
         try {
             return new FileInputStream(cfgFile);
@@ -165,7 +176,12 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         }
         String[] keys = prefs.keys();
         for (String key : keys) {
-            sb.append(spacer).append(" * ").append(key).append(": ").append(prefs.get(key, null)).append("\n");
+            sb.append(spacer)
+                    .append(" * ")
+                    .append(key)
+                    .append(": ")
+                    .append(prefs.get(key, null))
+                    .append("\n");
         }
     }
 

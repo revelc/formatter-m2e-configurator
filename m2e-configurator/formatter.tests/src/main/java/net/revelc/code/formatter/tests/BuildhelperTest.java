@@ -16,7 +16,6 @@ package net.revelc.code.formatter.tests;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -36,12 +35,15 @@ public class BuildhelperTest extends AbstractMavenProjectTestCase {
         IJavaProject javaProject = JavaCore.create(project);
         IClasspathEntry[] classpath = javaProject.getRawClasspath();
 
-        ClasspathHelpers.assertClasspath(new String[] { "/buildhelper-001/src/main/java", //
-                "/buildhelper-001/src/custom/java", //
-                "/buildhelper-001/src/test/java", //
-                "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
-                "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
-        }, classpath);
+        ClasspathHelpers.assertClasspath(
+                new String[] {
+                    "/buildhelper-001/src/main/java", //
+                    "/buildhelper-001/src/custom/java", //
+                    "/buildhelper-001/src/test/java", //
+                    "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
+                    "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
+                },
+                classpath);
     }
 
     @Test
@@ -50,22 +52,27 @@ public class BuildhelperTest extends AbstractMavenProjectTestCase {
         IJavaProject javaProject = JavaCore.create(project);
         IClasspathEntry[] classpath = javaProject.getRawClasspath();
 
-        ClasspathHelpers.assertClasspath(new String[] { "/buildhelper-002/src/main/java", //
-                "/buildhelper-002/src/custom/main/java", //
-                "/buildhelper-002/src/main/resources", //
-                "/buildhelper-002/src/custom/main/resources", //
-                "/buildhelper-002/src/test/java", //
-                "/buildhelper-002/src/custom/test/java", //
-                "/buildhelper-002/src/custom/test/resources", //
-                "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
-                "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
-        }, classpath);
+        ClasspathHelpers.assertClasspath(
+                new String[] {
+                    "/buildhelper-002/src/main/java", //
+                    "/buildhelper-002/src/custom/main/java", //
+                    "/buildhelper-002/src/main/resources", //
+                    "/buildhelper-002/src/custom/main/resources", //
+                    "/buildhelper-002/src/test/java", //
+                    "/buildhelper-002/src/custom/test/java", //
+                    "/buildhelper-002/src/custom/test/resources", //
+                    "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
+                    "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
+                },
+                classpath);
 
         File target = project.findMember("target").getRawLocation().toFile();
         assertTrue(target.exists(), target + " does not exist");
         assertTrue(new File(target, "classes/buildhelper002/custom/CustomTreeClass.class").exists(), "Class");
         assertTrue(new File(target, "classes/buildhelper002/custom/customTree.txt").exists(), "Resource");
-        assertTrue(new File(target, "test-classes/buildhelper002/custom/CustomTreeClassTest.class").exists(), "Test Class");
+        assertTrue(
+                new File(target, "test-classes/buildhelper002/custom/CustomTreeClassTest.class").exists(),
+                "Test Class");
         assertTrue(new File(target, "test-classes/buildhelper002/custom/customTreeTest.txt").exists(), "Test Resource");
     }
 
