@@ -25,7 +25,7 @@
     <relativePath>../../</relativePath>
   </parent>
 
-  <artifactId>net.revelc.code.formatter.tests</artifactId>
+  <artifactId>net.revelc.code.formatter.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
 
 </project>
