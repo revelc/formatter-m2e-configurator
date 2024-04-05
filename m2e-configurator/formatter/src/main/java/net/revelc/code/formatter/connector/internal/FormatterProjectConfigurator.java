@@ -20,7 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.logging.Logger;
 import net.revelc.code.formatter.connector.FormatterCore;
@@ -160,7 +160,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         }
 
         File f = new File("tree.txt");
-        try (final OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f), Charset.forName("UTF-8"))) {
+        try (final OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f), StandardCharsets.UTF_8)) {
             osw.write(sb.toString().toCharArray());
             f.getAbsolutePath();
         } catch (IOException e1) {
