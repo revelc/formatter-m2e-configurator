@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.m2e.tests.common;bundle-version="[1.0.0,10.0.0)",
  org.eclipse.jdt.core;bundle-version="[1.0.0,10.0.0)",
  org.eclipse.swt;bundle-version="[1.0.0,10.0.0)",
  net.revelc.code.formatter
-Import-Package: org.junit;version="4.12.0",
- org.junit.jupiter.api;version="5.0.0"
+Import-Package: org.junit.jupiter.api;version="5.10.2",
+ org.slf4j;version="2.0.12"
 Automatic-Module-Name: net.revelc.code.formatter.tests
