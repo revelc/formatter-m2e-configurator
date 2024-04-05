@@ -347,11 +347,10 @@
           <configuration>
             <createBackupFile>false</createBackupFile>
             <expandEmptyElements>false</expandEmptyElements>
-            <lineSeparator>\n</lineSeparator>
             <keepBlankLines>true</keepBlankLines>
             <nrOfIndentSpace>2</nrOfIndentSpace>
             <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
-            <sortDependencies>scope,groupId,artifactId</sortDependencies>
+            <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
             <sortProperties>true</sortProperties>
             <verifyFail>Stop</verifyFail>
           </configuration>
