@@ -77,7 +77,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
     @Override
     public void configure(ProjectConfigurationRequest request, IProgressMonitor monitor) throws CoreException {
-        IProject eclipseProject = request.getProject();
+        IProject eclipseProject = request.mavenProjectFacade().getProject();
 
         printSettings();
         if (eclipseProject.hasNature(JavaCore.NATURE_ID)) {
@@ -112,7 +112,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
     private InputStream readConfigFile(Formatter formatter, ProjectConfigurationRequest request,
             IProgressMonitor monitor) throws CoreException {
-        IMavenProjectFacade mavenProject = request.getMavenProjectFacade();
+        IMavenProjectFacade mavenProject = request.mavenProjectFacade();
         List<MojoExecution> executions = mavenProject.getMojoExecutions("net.revelc.code.formatter",
                 "formatter-maven-plugin", monitor, "validate");
 
@@ -125,7 +125,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
         File cfgFile = new File(javaConfigFile);
         if (!cfgFile.isAbsolute()) {
-            cfgFile = request.getProject().getLocation().append(javaConfigFile).toFile();
+            cfgFile = request.mavenProjectFacade().getProject().getLocation().append(javaConfigFile).toFile();
         }
 
         if (!cfgFile.exists())
