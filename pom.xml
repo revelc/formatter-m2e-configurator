@@ -186,9 +186,9 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
           <configuration>
-            <!-- using takari-lifecycle -->
-            <skip>true</skip>
-            <skipMain>true</skipMain>
+            <!-- ignore takari-lifecycle -->
+            <skip>false</skip>
+            <skipMain>false</skipMain>
           </configuration>
         </plugin>
         <plugin>
@@ -196,8 +196,8 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.1</version>
           <configuration>
-            <!-- using takari-lifecycle -->
-            <skip>true</skip>
+            <!-- ignore takari-lifecycle -->
+            <skip>false</skip>
           </configuration>
         </plugin>
         <plugin>
@@ -225,8 +225,8 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>3.1.1</version>
           <configuration>
-            <!-- using takari-lifecycle -->
-            <skip>true</skip>
+            <!-- ignore takari-lifecycle -->
+            <skip>false</skip>
           </configuration>
         </plugin>
         <plugin>
@@ -234,8 +234,8 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
           <configuration>
-            <!-- using takari-lifecycle -->
-            <skip>true</skip>
+            <!-- ignore takari-lifecycle -->
+            <skip>false</skip>
           </configuration>
         </plugin>
         <plugin>
@@ -248,8 +248,8 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-            <!-- using takari-lifecycle -->
-            <skip>true</skip>
+            <!-- ignore takari-lifecycle -->
+            <skip>false</skip>
           </configuration>
         </plugin>
         <plugin>
