@@ -24,11 +24,46 @@
     <version>2.6.0-SNAPSHOT</version>
   </parent>
 
+  <groupId>net.revelc.code.formatter</groupId>
   <artifactId>net.revelc.code.formatter.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
 
   <name>net.revelc.code.formatter.test</name>
   <description>Formatter Maven Plugin Eclipse Test</description>
+  <url>https://github.com/revelc/formatter-m2e-configurator/</url>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jecki.go</id>
+      <name>Jecki</name>
+      <email>jecki.go@gmail.com</email>
+    </developer>
+    <developer>
+      <id>matt.blanchette</id>
+      <name>Matt Blanchette</name>
+      <email>matt.blanchette@gmail.com</email>
+    </developer>
+    <developer>
+      <id>velo</id>
+      <name>Marvin Froeder</name>
+      <email>velo.br@gmail.com</email>
+    </developer>
+    <developer>
+      <id>jlandis</id>
+      <name>Jeremy Landis</name>
+    </developer>
+    <developer>
+      <name>Christopher Tubbs</name>
+    </developer>
+  </developers>
 
   <scm>
     <connection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</connection>
