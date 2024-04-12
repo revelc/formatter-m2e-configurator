@@ -9,9 +9,17 @@ This project provides an [m2e] project configurator for the
 a [Maven] project using m2e, you can have your project settings match the Maven
 plugin settings.
 
+## Manual Installation Process
+
 To use this project, download the site zip artifact from maven central then use the zip to import configurator into Eclipse.
 
 Directly trying to do this from maven central will fail with missing jars.
+
+To use this since we are not well versed on how to get the site zip into github currently, please use these instructions:
+
+- download https://repo1.maven.org/maven2/net/revelc/code/formatter/net.revelc.code.formatter.site/2.6.4/net.revelc.code.formatter.site-2.6.4.zip from maven central.
+- Then in eclipse, use Add Repository in available software using archive option and adding the zip file.
+- Accept any prompts during the process to successfully install it into Eclipse
 
 M2e related items
 - [related1] M2e Extension Development
