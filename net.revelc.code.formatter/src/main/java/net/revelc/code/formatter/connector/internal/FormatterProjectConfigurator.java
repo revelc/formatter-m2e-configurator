@@ -43,25 +43,53 @@ import org.eclipse.m2e.core.project.configurator.AbstractProjectConfigurator;
 import org.eclipse.m2e.core.project.configurator.ProjectConfigurationRequest;
 import org.osgi.service.prefs.Preferences;
 
+/**
+ * The Class FormatterProjectConfigurator.
+ */
 public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
+    /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(FormatterProjectConfigurator.class.getName());
 
+    /**
+     * The Enum Formatter.
+     */
     public enum Formatter {
+        
+        /** The java. */
         JAVA("configFile", "src/config/eclipse/formatter/java.xml");
 
+        /** The configuratio name. */
         private final String configuratioName;
+        
+        /** The default path. */
         private final String defaultPath;
 
+        /**
+         * Instantiates a new formatter.
+         *
+         * @param newConfiguratioName the new configuratio name
+         * @param newDefaultPath the new default path
+         */
         private Formatter(String newConfiguratioName, String newDefaultPath) {
             this.configuratioName = newConfiguratioName;
             this.defaultPath = newDefaultPath;
         }
 
+        /**
+         * Gets the configuration name.
+         *
+         * @return the configuration name
+         */
         public String getConfigurationName() {
             return this.configuratioName;
         }
 
+        /**
+         * Gets the default path.
+         *
+         * @return the default path
+         */
         public String getDefaultPath() {
             return this.defaultPath;
         }
@@ -100,6 +128,14 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         }
     }
 
+    /**
+     * Parses the configuration file.
+     *
+     * @param request the request
+     * @param monitor the monitor
+     * @return the xpp 3 dom[]
+     * @throws CoreException the core exception
+     */
     private Xpp3Dom[] parseConfigurationFile(ProjectConfigurationRequest request, IProgressMonitor monitor)
             throws CoreException {
         Xpp3Dom dom;
@@ -114,6 +150,15 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         return dom.getChild("profile").getChildren("setting");
     }
 
+    /**
+     * Read config file.
+     *
+     * @param formatter the formatter
+     * @param request the request
+     * @param monitor the monitor
+     * @return the input stream
+     * @throws CoreException the core exception
+     */
     private InputStream readConfigFile(
             Formatter formatter, ProjectConfigurationRequest request, IProgressMonitor monitor) throws CoreException {
         IMavenProjectFacade mavenProject = request.mavenProjectFacade();
@@ -147,6 +192,9 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         }
     }
 
+    /**
+     * Prints the settings.
+     */
     private void printSettings() {
         StringBuilder sb = new StringBuilder();
         Preferences prefs = Platform.getPreferencesService().getRootNode();
@@ -165,6 +213,14 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         }
     }
 
+    /**
+     * Eval.
+     *
+     * @param prefs the prefs
+     * @param spacer the spacer
+     * @param sb the sb
+     * @throws Exception the exception
+     */
     private static void eval(Preferences prefs, String spacer, StringBuilder sb) throws Exception {
         String[] children = prefs.childrenNames();
         for (String child : children) {
