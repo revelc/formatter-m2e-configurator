@@ -17,9 +17,12 @@ Directly trying to do this from maven central will fail with missing jars.
 
 To use this since we are not well versed on how to get the site zip into github currently, please use these instructions:
 
-- download https://repo1.maven.org/maven2/net/revelc/code/formatter/net.revelc.code.formatter.site/2.6.4/net.revelc.code.formatter.site-2.6.4.zip from maven central.
-- Then in eclipse, use Add Repository in available software using archive option and adding the zip file.
-- Accept any prompts during the process to successfully install it into Eclipse
+- Download https://repo1.maven.org/maven2/net/revelc/code/formatter/net.revelc.code.formatter.site/2.6.4/net.revelc.code.formatter.site-2.6.4.zip from maven central.
+- In Eclipse, got to Help/Install New Software...
+- Add Repository in available software using archive option and adding the zip file.
+- Select m2e connector for formatter-maven-plugin 2.6.4
+- Accept trust for artifacts as this is unsigned currently.  This applies to the osgi bundle and the feature.
+- Restart Eclipse when prompted
 
 M2e related items
 - [related1] M2e Extension Development
