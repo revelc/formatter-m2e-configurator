@@ -17,7 +17,7 @@ package net.revelc.code.formatter.connector;
  * The Class FormatterCore.
  */
 public class FormatterCore {
-    
+
     /** The Constant PLUGIN_ID. */
     public static final String PLUGIN_ID = "net.revelc.code.formatter.connector";
 

@@ -55,13 +55,13 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
      * The Enum Formatter.
      */
     public enum Formatter {
-        
+
         /** The java. */
         JAVA("configFile", "src/config/eclipse/formatter/java.xml");
 
         /** The configuratio name. */
         private final String configuratioName;
-        
+
         /** The default path. */
         private final String defaultPath;
 
