@@ -9,6 +9,10 @@ This project provides an [m2e] project configurator for the
 a [Maven] project using m2e, you can have your project settings match the Maven
 plugin settings.
 
+To use this project, download the site zip artifact from maven central then use the zip to import configurator into Eclipse.
+
+Directly trying to do this from maven central will fail with missing jars.
+
 M2e related items
 - [related1] M2e Extension Development
 - [related2] M2e Discovery Catalog
