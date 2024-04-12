@@ -25,4 +25,15 @@
 
   <artifactId>net.revelc.code.formatter</artifactId>
   <packaging>eclipse-plugin</packaging>
+
+  <name>net.revelc.code.formatter</name>
+  <description>Formatter connector code</description>
+
+  <scm>
+    <connection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</connection>
+    <developerConnection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/revelc/formatter-m2e-configurator</url>
+  </scm>
+
 </project>

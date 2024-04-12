@@ -27,4 +27,14 @@
   <artifactId>net.revelc.code.formatter.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
 
+  <name>net.revelc.code.formatter.test</name>
+  <description>Formatter Maven Plugin Eclipse Test</description>
+
+  <scm>
+    <connection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</connection>
+    <developerConnection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/revelc/formatter-m2e-configurator</url>
+  </scm>
+
 </project>

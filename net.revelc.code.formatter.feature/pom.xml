@@ -26,6 +26,16 @@
   <artifactId>net.revelc.code.formatter.feature</artifactId>
   <packaging>eclipse-feature</packaging>
 
+  <name>net.revelc.code.formatter.feature</name>
+  <description>Formatter Maven Plugin Eclipse Feature</description>
+
+  <scm>
+    <connection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</connection>
+    <developerConnection>scm:git:git@github.com/revelc/formatter-m2e-configurator.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/revelc/formatter-m2e-configurator</url>
+  </scm>
+
   <build>
     <plugins>
       <plugin>
