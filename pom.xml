@@ -593,7 +593,7 @@
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-scm-plugin</artifactId>
               <configuration>
-                <includes>net.revelc.code.formatter/META-INF/MANIFEST.MF,net.revelc.code.formatter.feature/feature.xml,net.revelc.code.formatter.site/category.xml</includes>
+                <includes>net.revelc.code.formatter/META-INF/MANIFEST.MF,net.revelc.code.formatter.feature/feature.xml,net.revelc.code.formatter.site/category.xml,net.revelc.code.formatter.test/META-INF/MANIFEST.MF</includes>
                 <message>[maven-release-plugin] increment Bundle-Version for ${project.version}</message>
                 <pushChanges>false</pushChanges>
               </configuration>
