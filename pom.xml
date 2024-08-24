@@ -114,8 +114,8 @@
   <properties>
     <autoVersionSubmodules>true</autoVersionSubmodules>
 
-    <m2e-core.url>https://download.eclipse.org/technology/m2e/releases/2.6.0/</m2e-core.url>
     <eclipse-repo.url>http://download.eclipse.org/releases/2024-06</eclipse-repo.url>
+    <m2e-core.url>https://download.eclipse.org/technology/m2e/releases/2.6.1/</m2e-core.url>
 
     <!-- because of https://issues.apache.org/jira/browse/MCOMPILER-485 -->
     <maven.compiler.createMissingPackageInfoClass>false</maven.compiler.createMissingPackageInfoClass>
