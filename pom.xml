@@ -128,6 +128,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+    <qualifiedVersion>2.6.5.qualifier</qualifiedVersion>
+
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
     <takari.release.gpg.skip>true</takari.release.gpg.skip>
