@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tests m2e connector for formatter-maven-plugin
-Bundle-SymbolicName: net.revelc.code.formatter.tests
+Bundle-SymbolicName: net.revelc.code.formatter.test
 Bundle-Version: 2.6.5.qualifier
 Bundle-Vendor: code.revelc.net
 Bundle-RequiredExecutionEnvironment: JavaSE-17
@@ -14,4 +14,4 @@ Require-Bundle: org.eclipse.m2e.core;bundle-version="[1.0.0,10.0.0)",
  net.revelc.code.formatter
 Import-Package: org.junit.jupiter.api;version="5.11.0",
  org.slf4j
-Automatic-Module-Name: net.revelc.code.formatter.tests
+Automatic-Module-Name: net.revelc.code.formatter.test
