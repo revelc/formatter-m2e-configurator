@@ -48,8 +48,8 @@ import org.osgi.service.prefs.Preferences;
  */
 public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
 
-    /** The Constant LOGGER. */
-    private static final Logger LOGGER = Logger.getLogger(FormatterProjectConfigurator.class.getName());
+    /** The Constant logger. */
+    private static final Logger logger = Logger.getLogger(FormatterProjectConfigurator.class.getName());
 
     /**
      * The Enum Formatter.
@@ -201,7 +201,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
         try {
             eval(prefs, "\t", sb);
         } catch (Exception e1) {
-            LOGGER.info("Exception in eval " + e1.getMessage());
+            logger.info("Exception in eval " + e1.getMessage());
         }
 
         File f = new File("tree.txt");
@@ -209,7 +209,7 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
             osw.write(sb.toString().toCharArray());
             f.getAbsolutePath();
         } catch (IOException e1) {
-            LOGGER.info("Exception in writing in tree.txt " + e1.getMessage());
+            logger.info("Exception in writing in tree.txt " + e1.getMessage());
         }
     }
 
