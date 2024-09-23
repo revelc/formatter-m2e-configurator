@@ -133,7 +133,7 @@
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
     <takari.release.gpg.skip>true</takari.release.gpg.skip>
-    <tychoVersion>4.0.8</tychoVersion>
+    <tychoVersion>4.0.9</tychoVersion>
   </properties>
 
   <repositories>
