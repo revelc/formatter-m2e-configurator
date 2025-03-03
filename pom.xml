@@ -133,7 +133,7 @@
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
     <takari.release.gpg.skip>true</takari.release.gpg.skip>
-    <tychoVersion>4.0.11</tychoVersion>
+    <tychoVersion>4.0.12</tychoVersion>
   </properties>
 
   <repositories>
@@ -196,7 +196,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.3</version>
+          <version>3.1.4</version>
           <configuration>
             <!-- ignore takari-lifecycle -->
             <skip>false</skip>
@@ -225,7 +225,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.3</version>
+          <version>3.1.4</version>
           <configuration>
             <!-- ignore takari-lifecycle -->
             <skip>false</skip>
@@ -319,7 +319,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.9.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
