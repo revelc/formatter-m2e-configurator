@@ -13,14 +13,12 @@
  */
 package net.revelc.code.formatter.connector.internal;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.logging.Logger;
 import net.revelc.code.formatter.connector.FormatterCore;
@@ -172,22 +170,23 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
             javaConfigFile = formatter.getDefaultPath();
         }
 
-        File cfgFile = new File(javaConfigFile);
+        Path cfgFile = Path.of(javaConfigFile);
         if (!cfgFile.isAbsolute()) {
             cfgFile = request.mavenProjectFacade()
                     .getProject()
                     .getLocation()
                     .append(javaConfigFile)
-                    .toFile();
+                    .toPath();
         }
 
-        if (!cfgFile.exists())
+        if (!cfgFile.toFile().exists()) {
             throw new CoreException(new Status(
                     IStatus.CANCEL, FormatterCore.PLUGIN_ID, "Configuration file '" + javaConfigFile + "' not found!"));
+        }
 
         try {
-            return new FileInputStream(cfgFile);
-        } catch (FileNotFoundException e) {
+            return Files.newInputStream(cfgFile);
+        } catch (IOException e) {
             throw new CoreException(new Status(IStatus.CANCEL, FormatterCore.PLUGIN_ID, e.getMessage()));
         }
     }
@@ -204,10 +203,10 @@ public class FormatterProjectConfigurator extends AbstractProjectConfigurator {
             logger.info("Exception in eval " + e1.getMessage());
         }
 
-        File f = new File("tree.txt");
-        try (final OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f), StandardCharsets.UTF_8)) {
+        Path f = Path.of("tree.txt");
+        try (final OutputStreamWriter osw = new OutputStreamWriter(Files.newOutputStream(f), StandardCharsets.UTF_8)) {
             osw.write(sb.toString().toCharArray());
-            f.getAbsolutePath();
+            f.toAbsolutePath();
         } catch (IOException e1) {
             logger.info("Exception in writing in tree.txt " + e1.getMessage());
         }

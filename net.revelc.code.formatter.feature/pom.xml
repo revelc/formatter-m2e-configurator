@@ -23,7 +23,6 @@
     <version>2.6.5-SNAPSHOT</version>
   </parent>
 
-  <groupId>net.revelc.code.formatter</groupId>
   <artifactId>net.revelc.code.formatter.feature</artifactId>
   <packaging>eclipse-feature</packaging>
 
