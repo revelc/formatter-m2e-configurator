@@ -153,9 +153,9 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>com.google.code.maven-replacer-plugin</groupId>
-          <artifactId>replacer</artifactId>
-          <version>1.5.3</version>
+          <groupId>io.github.floverfelt</groupId>
+          <artifactId>find-and-replace-maven-plugin</artifactId>
+          <version>1.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -551,39 +551,35 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>com.google.code.maven-replacer-plugin</groupId>
-            <artifactId>replacer</artifactId>
+            <groupId>io.github.floverfelt</groupId>
+            <artifactId>find-and-replace-maven-plugin</artifactId>
             <executions>
               <execution>
                 <id>update-manifest-version-from-pom</id>
                 <goals>
-                  <goal>replace</goal>
+                  <goal>find-and-replace</goal>
                 </goals>
                 <phase>pre-clean</phase>
                 <configuration>
-                  <file>${project.basedir}/META-INF/MANIFEST.MF</file>
-                  <replacements>
-                    <replacement>
-                      <token>Bundle-Version:.*</token>
-                      <value>Bundle-Version: ${project.version}</value>
-                    </replacement>
-                  </replacements>
+                  <replacementType>file-contents</replacementType>
+                  <baseDir>META-INF</baseDir>
+                  <fileMask>MANIFEST.MF</fileMask>
+                  <findRegex>Bundle-Version:.*</findRegex>
+                  <replaceValue>Bundle-Version: ${project.version}</replaceValue>
                 </configuration>
               </execution>
               <execution>
                 <id>version-with-snapshot-update-manifest</id>
                 <goals>
-                  <goal>replace</goal>
+                  <goal>find-and-replace</goal>
                 </goals>
                 <phase>pre-clean</phase>
                 <configuration>
-                  <file>${project.basedir}/META-INF/MANIFEST.MF</file>
-                  <replacements>
-                    <replacement>
-                      <token>-SNAPSHOT</token>
-                      <value>.qualifier</value>
-                    </replacement>
-                  </replacements>
+                  <replacementType>file-contents</replacementType>
+                  <baseDir>META-INF</baseDir>
+                  <fileMask>MANIFEST.MF</fileMask>
+                  <findRegex>-SNAPSHOT</findRegex>
+                  <replaceValue>.qualifier</replaceValue>
                 </configuration>
               </execution>
             </executions>
