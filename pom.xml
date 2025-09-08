@@ -133,7 +133,7 @@
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
     <takari.release.gpg.skip>true</takari.release.gpg.skip>
-    <tychoVersion>4.0.13</tychoVersion>
+    <tychoVersion>5.0.0</tychoVersion>
   </properties>
 
   <repositories>
@@ -324,7 +324,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.18.0</version>
+          <version>2.19.0</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
