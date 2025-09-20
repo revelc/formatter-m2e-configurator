@@ -100,9 +100,9 @@
       <url>https://central.sonatype.com/repository/maven-snapshots/</url>
     </snapshotRepository>
     <site>
-      <id>gh-pages</id>
+      <id>gh-pages-scm</id>
       <name>Formatter Maven Plugin GitHub Pages</name>
-      <url>git:ssh://git@github.com/revelc/formatter-m2e-configurator.git?gh-pages#</url>
+      <url>scm:git:ssh://git@github.com/revelc/formatter-m2e-configurator.git</url>
     </site>
   </distributionManagement>
 
