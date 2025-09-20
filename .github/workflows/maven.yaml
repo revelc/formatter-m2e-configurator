@@ -17,6 +17,13 @@ name: mvn verify
 
 on: [push, pull_request, workflow_dispatch]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: true
+
 jobs:
   build:
     strategy:
@@ -26,15 +33,15 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
     - name: Set up JDK ${{ matrix.java }}
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5
       with:
         java-version: ${{ matrix.java }}
         distribution: temurin
         cache: 'maven'
     - name: Download Maven Wrapper
-      run: mvn wrapper:wrapper "-Dmaven=3.9.6"
+      run: mvn wrapper:wrapper "-Dmaven=3.9.11"
     - name: Build with Maven
       run: ./mvnw -B -V -e "-Dstyle.color=always" verify
       env:

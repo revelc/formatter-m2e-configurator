@@ -78,43 +78,46 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.google.code.maven-replacer-plugin</groupId>
-        <artifactId>replacer</artifactId>
+        <groupId>io.github.floverfelt</groupId>
+        <artifactId>find-and-replace-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>update-feature-version-from-pom</id>
+            <id>update-feature-version-jar-from-pom</id>
             <goals>
-              <goal>replace</goal>
+              <goal>find-and-replace</goal>
             </goals>
             <phase>pre-clean</phase>
             <configuration>
-              <file>${project.basedir}/category.xml</file>
-              <replacements>
-                <replacement>
-                  <token>feature_.*[.]jar</token>
-                  <value>feature_${project.version}.jar</value>
-                </replacement>
-                <replacement>
-                  <token>feature" version=".*"</token>
-                  <value>feature" version="${project.version}"</value>
-                </replacement>
-              </replacements>
+              <replacementType>file-contents</replacementType>
+              <fileMask>category.xml</fileMask>
+              <findRegex>feature_.*[.]jar</findRegex>
+              <replaceValue>feature_${project.version}.jar</replaceValue>
+            </configuration>
+          </execution>
+          <execution>
+            <id>update-feature-version-from-pom</id>
+            <goals>
+              <goal>find-and-replace</goal>
+            </goals>
+            <phase>pre-clean</phase>
+            <configuration>
+              <replacementType>file-contents</replacementType>
+              <fileMask>category.xml</fileMask>
+              <findRegex>feature" version=".*"</findRegex>
+              <replaceValue>feature" version="${project.version}"</replaceValue>
             </configuration>
           </execution>
           <execution>
             <id>version-with-snapshot-update-feature</id>
             <goals>
-              <goal>replace</goal>
+              <goal>find-and-replace</goal>
             </goals>
             <phase>pre-clean</phase>
             <configuration>
-              <file>${project.basedir}/category.xml</file>
-              <replacements>
-                <replacement>
-                  <token>-SNAPSHOT</token>
-                  <value>.qualifier</value>
-                </replacement>
-              </replacements>
+              <replacementType>file-contents</replacementType>
+              <fileMask>category.xml</fileMask>
+              <findRegex>-SNAPSHOT</findRegex>
+              <replaceValue>.qualifier</replaceValue>
             </configuration>
           </execution>
         </executions>
