@@ -39,15 +39,6 @@
     <url>https://github.com/revelc/formatter-m2e-configurator</url>
   </scm>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.eclipse.platform</groupId>
-      <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
-      <version>3.131.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
   <build>
     <plugins>
       <plugin>
