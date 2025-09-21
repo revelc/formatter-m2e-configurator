@@ -39,4 +39,17 @@
     <url>https://github.com/revelc/formatter-m2e-configurator</url>
   </scm>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>5.0.0</version>
+        <configuration>
+          <providerHint>junit5</providerHint>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
