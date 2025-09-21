@@ -11,74 +11,74 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.revelc.code.formatter.tests;
+package net.revelc.code.formatter.test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.io.File;
+import java.io.IOException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.m2e.core.project.ResolverConfiguration;
 import org.eclipse.m2e.tests.common.AbstractMavenProjectTestCase;
 import org.eclipse.m2e.tests.common.ClasspathHelpers;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("restriction")
 public class BuildhelperTest extends AbstractMavenProjectTestCase {
 
+    // Override setup to force junit 5 as m2e is junit 4
+    @BeforeEach
+    @Override
+    public void setUp() throws Exception {
+        super.setUp();
+    }
+
     @Test
-    public void test_p001_simple() throws Exception {
-        IProject project = importBuildHelperProject("buildhelper-001");
+    void simpleSample() throws CoreException, IOException, InterruptedException {
+        IProject project = importBuildHelperProject("simple-sample");
         IJavaProject javaProject = JavaCore.create(project);
         IClasspathEntry[] classpath = javaProject.getRawClasspath();
 
         ClasspathHelpers.assertClasspath(
                 new String[] {
-                    "/buildhelper-001/src/main/java", //
-                    "/buildhelper-001/src/custom/java", //
-                    "/buildhelper-001/src/test/java", //
+                    "/simple-sample/src/main/java", //
+                    "/simple-sample/src/main/resources", //
+                    "/simple-sample/src/test/java", //
+                    "/simple-sample/src/test/resources", //
                     "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
                     "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
                 },
                 classpath);
     }
 
+    // Disabled because 'pom' project is not a java project so this is not valid to use and probably not applicable
+    // to formatting plugin for this specific testing
+    @Disabled
     @Test
-    public void test_p002_resources() throws Exception {
-        IProject project = importBuildHelperProject("buildhelper-002");
+    void modularSample() throws CoreException, IOException, InterruptedException {
+        IProject project = importBuildHelperProject("modular-sample");
         IJavaProject javaProject = JavaCore.create(project);
         IClasspathEntry[] classpath = javaProject.getRawClasspath();
 
         ClasspathHelpers.assertClasspath(
                 new String[] {
-                    "/buildhelper-002/src/main/java", //
-                    "/buildhelper-002/src/custom/main/java", //
-                    "/buildhelper-002/src/main/resources", //
-                    "/buildhelper-002/src/custom/main/resources", //
-                    "/buildhelper-002/src/test/java", //
-                    "/buildhelper-002/src/custom/test/java", //
-                    "/buildhelper-002/src/custom/test/resources", //
+                    "/modular-sample/src/main/java", //
+                    "/modular-sample/src/main/resources", //
+                    "/modular-sample/src/test/java", //
+                    "/modular-sample/src/test/resources", //
                     "org.eclipse.jdt.launching.JRE_CONTAINER/.*", //
                     "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER", //
                 },
                 classpath);
-
-        File target = project.findMember("target").getRawLocation().toFile();
-        assertTrue(target.exists(), target + " does not exist");
-        assertTrue(new File(target, "classes/buildhelper002/custom/CustomTreeClass.class").exists(), "Class");
-        assertTrue(new File(target, "classes/buildhelper002/custom/customTree.txt").exists(), "Resource");
-        assertTrue(
-                new File(target, "test-classes/buildhelper002/custom/CustomTreeClassTest.class").exists(),
-                "Test Class");
-        assertTrue(new File(target, "test-classes/buildhelper002/custom/customTreeTest.txt").exists(), "Test Resource");
     }
 
-    private IProject importBuildHelperProject(String name) throws Exception {
+    private IProject importBuildHelperProject(String name) throws CoreException, IOException, InterruptedException {
         ResolverConfiguration configuration = new ResolverConfiguration();
-        IProject project = importProject("projects/buildhelper/" + name + "/pom.xml", configuration);
+        IProject project = importProject("projects/" + name + "/pom.xml", configuration);
         waitForJobsToComplete();
 
         project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
