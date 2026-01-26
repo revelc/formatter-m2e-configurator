@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-surefire-plugin</artifactId>
-        <version>5.0.1</version>
+        <version>5.0.2</version>
         <configuration>
           <providerHint>junit5</providerHint>
         </configuration>
