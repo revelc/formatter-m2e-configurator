@@ -126,7 +126,7 @@
     <tagNameFormat>formatter-m2e-configurator-@{project.version}</tagNameFormat>
 
     <takari.release.gpg.skip>true</takari.release.gpg.skip>
-    <tychoVersion>5.0.2</tychoVersion>
+    <tychoVersion>5.0.3</tychoVersion>
   </properties>
 
   <repositories>
@@ -239,7 +239,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.5.5</version>
+          <version>3.5.6</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -261,7 +261,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.10.0</version>
+          <version>3.11.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
